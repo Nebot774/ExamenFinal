@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/moveListRecyclerFragment">
+
+    <!-- Fragmento para mostrar la lista de movimientos -->
+    <fragment
+        android:id="@+id/moveListRecyclerFragment"
+        android:name="com.example.examenfinal.MoveListRecyclerFragment"
+        android:label="fragment_move_list_recycler"
+        tools:layout="@layout/fragment_move_list_recycler" >
+
+        <!-- Acción para navegar desde MoveListRecyclerFragment a MoveDetailFragment -->
+        <action
+            android:id="@+id/action_moveListRecyclerFragment_to_moveDetailFragment"
+            app:destination="@id/moveDetailFragment" />
+    </fragment>
+
+    <!-- Fragmento para mostrar los detalles de un movimiento -->
+    <fragment
+        android:id="@+id/moveDetailFragment"
+        android:name="com.example.examenfinal.MoveDetailFragment"
+        android:label="fragment_move_detail"
+        tools:layout="@layout/fragment_move_detail" />
+
+</navigation>
+

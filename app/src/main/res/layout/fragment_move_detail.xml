@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- Variable "move" de tipo "com.example.examenfinal.models.Move" -->
+        <variable
+            name="move"
+            type="com.example.examenfinal.models.Move" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp">
+
+        <!-- TextView para mostrar el texto "Movement:" -->
+        <TextView
+            android:id="@+id/movementTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Movement:"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- TextView para mostrar el nombre del movimiento -->
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{move.name}"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/movementTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- TextView para mostrar el texto "Accuracy:" -->
+        <TextView
+            android:id="@+id/accuracyTitleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Accuracy:"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/nameTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- TextView para mostrar la precisión del movimiento -->
+        <TextView
+            android:id="@+id/accuracyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{`Accuracy: ` + move.accuracy}"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/accuracyTitleTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- TextView para mostrar el texto "Pokemon:" -->
+        <TextView
+            android:id="@+id/pokemonTitleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pokemon:"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/accuracyTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- TextView para mostrar la lista de Pokémon asociados al movimiento -->
+        <TextView
+            android:id="@+id/pokemonListTextView"
+            android:layout_width="0dp"
+            android:layout_height="400dp"
+            android:text="@{move.pokemonsString}"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            android:background="#000000"
+            android:backgroundTint="@color/teal_200"
+            app:layout_constraintTop_toBottomOf="@id/pokemonTitleTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
